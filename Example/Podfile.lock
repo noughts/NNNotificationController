@@ -1,6 +1,17 @@
 PODS:
+  - CocoaLumberjack (2.0.0-rc2):
+    - CocoaLumberjack/Default (= 2.0.0-rc2)
+    - CocoaLumberjack/Extensions (= 2.0.0-rc2)
+  - CocoaLumberjack/Core (2.0.0-rc2)
+  - CocoaLumberjack/Default (2.0.0-rc2):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.0.0-rc2):
+    - CocoaLumberjack/Default
   - Expecta (0.3.2)
-  - NNNotificationController (1.0.2)
+  - NBULog (1.2.3):
+    - CocoaLumberjack (>= 2.0.0-beta4)
+  - NNNotificationController (1.0.4):
+    - NBULog
   - Specta (0.3.2)
 
 DEPENDENCIES:
@@ -13,8 +24,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
+  CocoaLumberjack: 6027cd9a0665203a7df456c526e137f02cd547e1
   Expecta: ee641011fe10aa1855d487b40e4976dac50ec342
-  NNNotificationController: 3cae652e4c4c568ab6e47444a5dc261b2847386c
+  NBULog: 029ea974252f6d8e09de38985f67b9740098aa7f
+  NNNotificationController: 8f1f476df5ddba855b0ebdee30d4f6513363b556
   Specta: 698a58ffa5ec948327d3b92eab50ca58d7f4fbe8
 
 COCOAPODS: 0.35.0

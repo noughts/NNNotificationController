@@ -7,9 +7,11 @@
 //
 
 #import "NNNotificationController.h"
+#import <NBULog.h>
 
 @implementation NNNotificationController{
 	__weak id _observer;
+	NSString* observerName;
 	NSHashTable* _observers;
 }
 
@@ -25,6 +27,7 @@
 		_observer = observer;
 		_observers = [NSHashTable weakObjectsHashTable];
 		[_observers addObject:observer];
+		observerName = [observer description];
 	}
 	return self;
 }
@@ -32,6 +35,7 @@
 
 
 -(void)dealloc{
+	NBULogVerbose(@"dealloc observer=%@", observerName);
 	[self unobserveAll];
 }
 

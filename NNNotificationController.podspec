@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "NNNotificationController"
-  s.version          = "1.0.4"
+  s.version          = "1.0.5"
   s.summary          = "NotificationController like KVOController"
   s.description      = <<-DESC
                        useful NotificationController like KVOController
@@ -31,5 +31,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'NBULog'
 end
