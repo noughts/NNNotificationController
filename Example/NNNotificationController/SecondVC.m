@@ -25,8 +25,18 @@
 	[_notificationController addObserverForName:UIApplicationDidBecomeActiveNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
 		NSLog( @"block -> %@", note );
 	}];
+	
+	[_notificationController addObserver:self selector:@selector(hoge:) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
+-(void)dealloc{
+	NSLog( @"dealloc" );
+}
+
+
+-(void)hoge:(NSNotification*)note{
+	NSLog( @"selector -> %@", note );
+}
 
 
 

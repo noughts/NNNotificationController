@@ -27,20 +27,32 @@
 }
 
 
+
+-(void)dealloc{
+	[self unobserveAll];
+}
+
+
 - (id)addObserverForName:(NSString *)name object:(id)obj queue:(NSOperationQueue *)queue usingBlock:(void (^)(NSNotification *note))block{
 	id observer = [[NSNotificationCenter defaultCenter] addObserverForName:name object:obj queue:queue usingBlock:block];
 	[_observers addObject:observer];
 	return observer;
 }
 
+- (void)addObserver:(id)observer selector:(SEL)aSelector name:(NSString *)aName object:(id)anObject{
+	[_observers addObject:observer];
+	[[NSNotificationCenter defaultCenter] addObserver:observer selector:aSelector name:aName object:anObject];
+}
 
 
-
-
--(void)dealloc{
+-(void)unobserveAll{
 	for (id observer in _observers) {
 		[[NSNotificationCenter defaultCenter] removeObserver:observer];
 	}
+	[_observers removeAllObjects];
 }
+
+
+
 
 @end
