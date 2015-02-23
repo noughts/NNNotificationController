@@ -33,13 +33,13 @@
 }
 
 
-- (id)addObserverForName:(NSString *)name object:(id)obj queue:(NSOperationQueue *)queue usingBlock:(void (^)(NSNotification *note))block{
+- (id)observeForName:(NSString *)name object:(id)obj queue:(NSOperationQueue *)queue usingBlock:(void (^)(NSNotification *note))block{
 	id observer = [[NSNotificationCenter defaultCenter] addObserverForName:name object:obj queue:queue usingBlock:block];
 	[_observers addObject:observer];
 	return observer;
 }
 
-- (void)addObserver:(id)observer selector:(SEL)aSelector name:(NSString *)aName object:(id)anObject{
+- (void)observe:(id)observer selector:(SEL)aSelector name:(NSString *)aName object:(id)anObject{
 	[_observers addObject:observer];
 	[[NSNotificationCenter defaultCenter] addObserver:observer selector:aSelector name:aName object:anObject];
 }

@@ -18,15 +18,15 @@
 	
 	_notificationController = [NNNotificationController controllerWithObserver:self];
 	
-	[_notificationController addObserverForName:@"hoge" object:nil queue:nil usingBlock:^(NSNotification *note) {
+	[_notificationController observeForName:@"hoge" object:nil queue:nil usingBlock:^(NSNotification *note) {
 		NSLog( @"%@", note );
 	}];
 	
-	[_notificationController addObserverForName:UIApplicationDidBecomeActiveNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+	[_notificationController observeForName:UIApplicationDidBecomeActiveNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
 		NSLog( @"block -> %@", note );
 	}];
 	
-	[_notificationController addObserver:self selector:@selector(hoge:) name:UIApplicationDidBecomeActiveNotification object:nil];
+	[_notificationController observe:self selector:@selector(hoge:) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 -(void)dealloc{
