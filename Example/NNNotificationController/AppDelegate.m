@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Koichi Yamamoto. All rights reserved.
 //
 
-#import "NNAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation NNAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
