@@ -1,0 +1,20 @@
+PODS:
+  - Expecta (0.3.2)
+  - NNNotificationController (0.1.0)
+  - Specta (0.3.2)
+
+DEPENDENCIES:
+  - Expecta
+  - NNNotificationController (from `../`)
+  - Specta
+
+EXTERNAL SOURCES:
+  NNNotificationController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Expecta: ee641011fe10aa1855d487b40e4976dac50ec342
+  NNNotificationController: 8d2aad293569a87c473f0afc995d350ad9c4a0e9
+  Specta: 698a58ffa5ec948327d3b92eab50ca58d7f4fbe8
+
+COCOAPODS: 0.35.0
