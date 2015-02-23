@@ -9,7 +9,7 @@
 #import "NNNotificationController.h"
 
 @implementation NNNotificationController{
-	NSMutableSet* _observers;
+	NSHashTable* _observers;
 }
 
 +(instancetype)controllerWithObserver:(id)observer{
@@ -21,7 +21,7 @@
 - (instancetype)initWithObserver:(id)observer{
 	self = [super init];
 	if (nil != self) {
-		_observers = [NSMutableSet new];
+		_observers = [NSHashTable weakObjectsHashTable];
 	}
 	return self;
 }
