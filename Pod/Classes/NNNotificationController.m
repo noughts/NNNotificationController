@@ -9,6 +9,7 @@
 #import "NNNotificationController.h"
 
 @implementation NNNotificationController{
+	__weak id _observer;
 	NSHashTable* _observers;
 }
 
@@ -21,7 +22,9 @@
 - (instancetype)initWithObserver:(id)observer{
 	self = [super init];
 	if (nil != self) {
+		_observer = observer;
 		_observers = [NSHashTable weakObjectsHashTable];
+		[_observers addObject:observer];
 	}
 	return self;
 }
@@ -39,9 +42,8 @@
 	return observer;
 }
 
-- (void)observe:(id)observer selector:(SEL)aSelector name:(NSString *)aName object:(id)anObject{
-	[_observers addObject:observer];
-	[[NSNotificationCenter defaultCenter] addObserver:observer selector:aSelector name:aName object:anObject];
+- (void)observeForName:(NSString*)aName object:(id)anObject selector:(SEL)aSelector{
+	[[NSNotificationCenter defaultCenter] addObserver:_observer selector:aSelector name:aName object:anObject];
 }
 
 
