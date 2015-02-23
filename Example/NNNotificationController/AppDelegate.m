@@ -7,12 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import <NBULog.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+	[NBULog setAppLogLevel:DDLogLevelVerbose];
     return YES;
 }
 							

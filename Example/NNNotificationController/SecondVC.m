@@ -8,6 +8,7 @@
 
 #import "SecondVC.h"
 #import <NNNotificationController.h>
+#import <NBULog.h>
 
 @implementation SecondVC{
 	NNNotificationController* _notificationController;
@@ -19,23 +20,23 @@
 	_notificationController = [NNNotificationController controllerWithObserver:self];
 	
 	[_notificationController observeForName:@"hoge" object:nil queue:nil usingBlock:^(NSNotification *note) {
-		NSLog( @"%@", note );
+		NBULogInfo( @"%@", note );
 	}];
 	
 	[_notificationController observeForName:UIApplicationDidBecomeActiveNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-		NSLog( @"block -> %@", note );
+		NBULogInfo( @"block -> %@", note );
 	}];
 	
 	[_notificationController observeForName:UIApplicationDidBecomeActiveNotification object:nil selector:@selector(hoge:)];
 }
 
 -(void)dealloc{
-	NSLog( @"dealloc" );
+	NBULogVerbose( @"dealloc" );
 }
 
 
 -(void)hoge:(NSNotification*)note{
-	NSLog( @"selector -> %@", note );
+	NBULogInfo( @"selector -> %@", note );
 }
 
 
