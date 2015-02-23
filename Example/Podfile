@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'NNNotificationController', :exclusive => true do
+  pod "NNNotificationController", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "NNNotificationController", :path => "../"
+
+  pod 'Specta'
+  pod 'Expecta'
+end
