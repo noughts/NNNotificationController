@@ -26,7 +26,6 @@
 	if (nil != self) {
 		_observer = observer;
 		_observers = [NSHashTable weakObjectsHashTable];
-		[_observers addObject:observer];
 		observerName = [observer description];
 	}
 	return self;
@@ -56,6 +55,7 @@
 		[[NSNotificationCenter defaultCenter] removeObserver:observer];
 	}
 	[_observers removeAllObjects];
+	[[NSNotificationCenter defaultCenter] removeObserver:_observer];
 }
 
 
