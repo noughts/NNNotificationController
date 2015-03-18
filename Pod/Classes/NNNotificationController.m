@@ -34,7 +34,9 @@
 
 
 -(void)dealloc{
-	NBULogVerbose(@"dealloc observer=%@", observerName);
+	if( observerName ){
+		NBULogVerbose(@"dealloc observer=%@", observerName);
+	}
 	[self unobserveAll];
 }
 
