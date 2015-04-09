@@ -52,6 +52,17 @@
 }
 
 
+- (void)unobserve:(id)object keyPath:(NSString *)keyPath{
+	[[NSNotificationCenter defaultCenter] removeObserver:object name:keyPath object:nil];
+}
+
+
+- (void)unobserve:(id)object{
+	[[NSNotificationCenter defaultCenter] removeObserver:object];
+	[_observers removeObject:object];
+}
+
+
 -(void)unobserveAll{
 	for (id observer in _observers) {
 		[[NSNotificationCenter defaultCenter] removeObserver:observer];
@@ -59,6 +70,23 @@
 	[_observers removeAllObjects];
 	[[NSNotificationCenter defaultCenter] removeObserver:_observer];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "NNNotificationController"
-  s.version          = "1.0.7"
+  s.version          = "1.1.0"
   s.summary          = "NotificationController like KVOController"
   s.description      = <<-DESC
                        useful NotificationController like KVOController
