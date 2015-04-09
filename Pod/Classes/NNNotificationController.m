@@ -53,7 +53,7 @@
 
 
 - (void)unobserve:(id)object keyPath:(NSString *)keyPath{
-	[[NSNotificationCenter defaultCenter] removeObserver:object name:keyPath object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:_observer name:keyPath object:object];
 }
 
 
